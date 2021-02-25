@@ -37,3 +37,46 @@ const reviews = [
         "Edison bulb put a bird on it humblebrag, marfa pok pok heirloom fashion axe cray stumptown venmo actually seitan. VHS farm-to-table schlitz, edison bulb pop-up 3 wolf moon tote bag street art shabby chic. ",
     },
   ];
+  let prevButton=document.querySelector('.prev-btn')
+  let nextButton=document.querySelector('.next-btn')
+  let randomButton=document.querySelector('.random-btn')
+  let personImage=document.getElementById('person-img')
+  let author=document.getElementById('author')
+  let job=document.getElementById('job')
+  let info=document.getElementById('info')
+  let count=0
+prevButton.addEventListener('click',function(){
+    console.log(count)
+    if( count>=0){
+        console.log(count)
+    personImage.setAttribute('src',reviews[count].img)
+    author.innerHTML=reviews[count].name
+    job.innerHTML=reviews[count].job
+    info.innerHTML=reviews[count].text
+    if(count!=0){
+    count--;
+    }
+    }
+    
+})
+nextButton.addEventListener('click',function(){
+    console.log(count)
+    if( count>=0){
+        console.log(count)
+    personImage.setAttribute('src',reviews[count].img)
+    author.innerHTML=reviews[count].name
+    job.innerHTML=reviews[count].job
+    info.innerHTML=reviews[count].text
+    if(count!=reviews.length-1){
+        count++;
+        }
+    }
+    
+})
+randomButton.addEventListener('click',function(){
+count=Math.floor(Math.random()*reviews.length-1+1)
+personImage.setAttribute('src',reviews[count].img)
+author.innerHTML=reviews[count].name
+job.innerHTML=reviews[count].job
+info.innerHTML=reviews[count].text
+})
