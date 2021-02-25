@@ -49,10 +49,7 @@ prevButton.addEventListener('click',function(){
     console.log(count)
     if( count>=0){
         console.log(count)
-    personImage.setAttribute('src',reviews[count].img)
-    author.innerHTML=reviews[count].name
-    job.innerHTML=reviews[count].job
-    info.innerHTML=reviews[count].text
+        display()
     if(count!=0){
     count--;
     }
@@ -64,9 +61,7 @@ nextButton.addEventListener('click',function(){
     if( count>=0){
         console.log(count)
     personImage.setAttribute('src',reviews[count].img)
-    author.innerHTML=reviews[count].name
-    job.innerHTML=reviews[count].job
-    info.innerHTML=reviews[count].text
+        display()
     if(count!=reviews.length-1){
         count++;
         }
@@ -75,8 +70,11 @@ nextButton.addEventListener('click',function(){
 })
 randomButton.addEventListener('click',function(){
 count=Math.floor(Math.random()*reviews.length-1+1)
-personImage.setAttribute('src',reviews[count].img)
+    display()
+})
+function display(){
+    personImage.setAttribute('src',reviews[count].img)
 author.innerHTML=reviews[count].name
 job.innerHTML=reviews[count].job
 info.innerHTML=reviews[count].text
-})
+}
